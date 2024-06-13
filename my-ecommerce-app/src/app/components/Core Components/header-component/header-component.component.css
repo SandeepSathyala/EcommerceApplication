@@ -1,0 +1,134 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    background: crimson;
+    font-family: calibri, sans-serif;
+    padding: 10px 20px;
+  }
+  
+  .navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .logo a {
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo a i {
+    margin-right: 10px;
+  }
+  
+  .nav-links, .icons {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffddcc;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .search-container input {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .search-container input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .icons li {
+    margin-left: 15px;
+  }
+  
+  .icons a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+  
+  .icons a:hover {
+    color: #ffddcc;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-links li {
+      margin: 10px;
+    }
+  
+    .icons {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .icons li {
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navdiv {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links, .icons {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .nav-links li, .icons li {
+      margin: 10px 0;
+    }
+  
+    .search-container {
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    .search-container input {
+      width: 100%;
+    }
+  }
+  
