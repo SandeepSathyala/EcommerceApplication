@@ -1,0 +1,49 @@
+<div id="login-box">
+    <div class="left">
+      <h1>Sign up</h1>
+      
+      <input type="text" formControlName="fullname" placeholder="Full Name" />
+      <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="error">
+        <div *ngIf="fullname.errors.required">Full Name is required.</div>
+      </div>
+      
+      <input type="text" formControlName="phone" placeholder="Phone Number" />
+      <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error">
+        <div *ngIf="phone.errors.required">Phone Number is required.</div>
+      </div>
+      
+      <input type="text" formControlName="username" placeholder="Username" />
+      <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+        <div *ngIf="username.errors.required">Username is required.</div>
+      </div>
+      
+      <input type="text" formControlName="email" placeholder="E-mail" />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+        <div *ngIf="email.errors.required">Email is required.</div>
+        <div *ngIf="email.errors.email">Invalid email format.</div>
+      </div>
+      
+      <input type="password" formControlName="password" placeholder="Password" />
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+        <div *ngIf="password.errors.required">Password is required.</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters long.</div>
+      </div>
+      
+      <input type="password" formControlName="password2" placeholder="Retype password" />
+      <div  class="error">
+        <div>Please retype your password.</div>
+      </div>
+      
+      <button type="submit">Sign me up</button>
+    </div>
+    
+    <div class="right">
+      <span class="loginwith">Sign in<br />social network</span>
+      <button class="social-signin facebook">Log in with Facebook</button>
+      <button class="social-signin twitter">Log in with Twitter</button>
+      <button class="social-signin google">Log in with Google+</button>
+    </div>
+    
+    <div class="or">OR</div>
+  </div>
+  
