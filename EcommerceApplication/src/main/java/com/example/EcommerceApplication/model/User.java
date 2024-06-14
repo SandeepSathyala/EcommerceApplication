@@ -3,11 +3,14 @@ package com.example.EcommerceApplication.model;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,25 +18,33 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Document(collection = "users")
+@Entity
+//@Document(collection = "users")
 public class User {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private int user_id;
+	
+	@Column
 	 private String username;
+	@Column
      private String password;
+	@Column
 	 private String email;
+	@Column
 	 private String first_name;
+	@Column
 	 private String last_name;
+	@Column
 	 private long phone;
+	@Column
 	 private String address;
 	
 	@CreatedDate
-	@Field("created_at")
 	 private LocalDateTime createdAt;
 
 	@LastModifiedDate
-	@Field("updated_at")
 	 private LocalDateTime updatedAt;
 	
 	 private Role role;

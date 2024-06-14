@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.EcommerceApplication.dto.UserDto;
 import com.example.EcommerceApplication.model.User;
 import com.example.EcommerceApplication.service.UserService;
 
@@ -26,11 +27,11 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/createUser")
-    public ResponseEntity<Object> createUser(@RequestBody User user) {
+    public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
         User createdUser = userService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
-
+    
 
     @GetMapping
     public ResponseEntity<Object> getAllUsers() {
@@ -41,12 +42,12 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(users);
     }
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<Object> getUserById(@PathVariable int userId) {
-        Optional<User> user = userService.getUserById(userId);
-        return user.map(value -> ResponseEntity.status(HttpStatus.OK).body(value))
-                   .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found"));
-    }
+//    @GetMapping("/{userId}")
+//    public ResponseEntity<Object> getUserById(@PathVariable int userId) {
+//        Optional<User> user = userService.getUserById(userId);
+//        return user.map(value -> ResponseEntity.status(HttpStatus.OK).body(value))
+//                   .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found"));
+//    }
 
 
     @PutMapping("/{userId}")
